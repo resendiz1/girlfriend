@@ -34,6 +34,13 @@
   <!-- Start your project here-->  
 <div class="container">
   <div class="row d-flex shadow justify-content-center mt-5 p-1 bg-white">
+    <div class="col-12 text-center h3 font-weight-bold" >
+      <h1>PUNTOS</h1>
+    </div>
+    <div class="col-12 text-center h3 font-weight-bold" id="puntos">
+
+    </div>
+    <br>
     <div class="col-8 text-center mt-5 mb-5" id='2'>
       <h3 class="font-weight-bold">¿QUIERES SER MI NOVIA?</h3>
     </div>
@@ -63,17 +70,35 @@
   <script type="text/javascript">
     var a = document.getElementById('no');
     var si = document.getElementById('si');
+    var i =0;
+    var puntos = document.getElementById('puntos');
+    var contenedor = document.getElementsByClassName('container');
+    var content = document.getElementById('content');
+    var uno = document.getElementById('1')
+    var dos = document.getElementById('2')
 
      a.addEventListener("mouseover", function (){
        var w = Math.random() * (800 - 300) + 300
+      i++;
+      puntos.innerHTML =+ i;
+
+
+      if(i=== 5){
+        uno.classList.add('oculto')
+        dos.classList.add('oculto')
+        a.classList.add('oculto')
+        puntos.innerHTML = ' <h1> Perdiste por intentos fallidos </h1>'
+        content.classList.remove('oculto')
+      }
+
+
        a.style.margin = w +'5px';
+
        
      })
 
      si.addEventListener('click', function(){
-        var content = document.getElementById('content');
-        var uno = document.getElementById('1')
-        var dos = document.getElementById('2')
+
 
         uno.classList.add('oculto')
         dos.classList.add('oculto')
